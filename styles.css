@@ -20,10 +20,11 @@
     --marfil-letras: #FDF5E6; /* El tono crema para el texto */
     --fondo-sitio: #F8F9FA;   /* Un blanco grisáceo para que el fondo sea claro */
     --fuente-logo: "Playfair Display", serif;
+    --fuente-hero: "Roboto",serif;
 }
 .navbar-farmacia{
     background-color: #006400;
-    border-bottom: solid 3px #32CD32;
+    border-bottom: solid 3px var(--verde-fachada);
 }
 
 .navbar-farmacia .navbar-brand{
@@ -64,6 +65,120 @@
    padding: 5px;
 }
 
+body{
+    background-color: var(--fondo-sitio);
+}
+
+.hero-contacto{
+    background-color: #2D6A4F;
+    border-top: 2px solid var(--negro-suave);
+    border-bottom: 2px solid var(--negro-suave);
+    box-shadow: 0 12px 20px -8px rgba(50, 205, 50, 0.5);
+}
+
+.hero-contacto p{
+    color: var(--crema-fondo);
+    font-weight: 600;
+}
+
+.hero-contacto h1{
+    color: var(--marfil-letras);
+    font-family: var(--fuente-hero);
+    font-weight:700;
+}
+
+
+.card-formulario{
+    background-color: var(--crema-fondo);
+    border-radius: 30px;
+    border: 1px solid var(--verde-oscuro);
+}
+
+.card-formulario .btn-success{
+    background-color: var(--verde-fachada);
+    color: #050101;
+    font-weight: 600;
+    border: 1px solid var(--verde-oscuro);
+    transition: 0,3s;
+}
+
+.card-formulario .btn-success:hover{
+    background-color: var(--verde-oscuro);
+    color: var(--marfil-letras);
+    transform: translateY(-2px);
+}
+
+.card-contacto{
+    background-color: var(--blanco-puro);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 
+                0 8px 25px rgba(50, 205, 50, 0.1);
+}
+
+.card-contacto:hover{
+    transform: translateY(-5px);
+    border: 1px solid var(--verde-fachada);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1), 
+                0 15px 40px rgba(50, 205, 50, 0.25);
+}
+
+.card-contacto i{
+    color: var(--verde-fachada);
+    font-size: 1.8rem;
+    width: 40px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(50, 205, 50, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card-contacto i:hover{
+    transform: scale(1.2) rotate(-5px);
+    color: #28a745;
+}
+
+.card-contacto span{
+    color: #2c3e50;
+    font-size: 1.05rem;
+    margin-left: 10px;
+    letter-spacing: 0.5px;
+}
+
+.card-contacto .small{
+    display: block;
+    margin-top: 5px;
+    padding-left: 50px;
+    letter-spacing: 0.5px;
+}
+
+.card-mapa{
+    background-color: var(--blanco-puro);
+    padding:0;
+    overflow: hidden;
+    border: solid 1px var(--verde-fachada);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 
+                0 8px 25px rgba(50, 205, 50, 0.1);
+}
+
+.card-mapa:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1), 
+                0 15px 40px rgba(50, 205, 50, 0.25);
+}
+.card-mapa iframe {
+    pointer-events: none; 
+    filter: grayscale(15%) contrast(90%); 
+    transition: all 0.5s ease;
+}
+.card-mapa:active iframe,
+.card-mapa:hover iframe {
+    pointer-events: auto;
+    filter: grayscale(0%) contrast(100%); /* Recupera el color */
+}
 .footer-farmacia{
     background-color: var(--verde-oscuro);
     border-top: 3px solid var(--verde-fachada);
@@ -96,10 +211,10 @@
     transform: scale(1.1);
 }
 .footer-farmacia .col-md-4{
-    border-left: solid 2px var(--gris-azulejo);
+    border-bottom: solid 2px var(--gris-azulejo);
 }
 
-.footer-wec .col-12{
+.footer-farmacia .col-12{
     color: #E1E8E8;
     font-weight: 600;
 }
