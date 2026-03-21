@@ -179,6 +179,81 @@ body{
     pointer-events: auto;
     filter: grayscale(0%) contrast(100%); /* Recupera el color */
 }
+
+.hero-nosotros {
+    background-color: #B7E4C7; 
+    border-top: 2px solid var(--negro-suave);
+    border-bottom: 2px solid var(--negro-suave);
+    box-shadow: 0 10px 25px -10px rgba(45, 106, 79, 0.3);
+    padding: 60px 0;
+}
+
+.hero-nosotros p{
+    color: var(--negro-suave);
+    font-weight: 500;
+}
+
+.hero-nosotros h1{
+    color: var(--negro-suave);
+    font-family: var(--fuente-hero);
+    font-weight:600;
+}
+
+
+.bloque-texto {
+    background-color: var(--blanco-puro); 
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+    border-left: 5px solid var(--verde-fachada); 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.foto-historia {
+    border: 3px solid var(--verde-fachada); 
+    padding: 5px;           
+    background-color: white;
+    transition: all 0.4s ease;
+}
+
+.foto-historia:hover {
+    transform: translateY(-5px); /* Un levante sutil al pasar el mouse */
+    box-shadow: 0 15px 30px rgba(45, 106, 79, 0.2) !important;
+}
+
+
+.bloque-texto h2 {
+    color: var(--verde-oscuro); 
+    font-weight: 800;
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.bloque-texto .lead {
+    color: #2D6A4F;
+    font-weight: 500;
+}
+
+.bloque-texto p {
+    color: #495057; 
+    line-height: 1.6;
+}
+
+.link-verde {
+    color: var(--verde-fachada);
+    position: relative;
+    transition: color 0.3s;
+}
+
+.link-verde:hover {
+    color: #1B4332;
+    text-decoration: underline !important;
+}
+
 .footer-farmacia{
     background-color: var(--verde-oscuro);
     border-top: 3px solid var(--verde-fachada);
