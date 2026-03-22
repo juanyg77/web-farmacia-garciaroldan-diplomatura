@@ -13,6 +13,7 @@
     --crema-fondo: #FDF5E6;      /* El Marfil/Crema (Old Lace) para el body */
     --blanco-puro: #FFFFFF;      /* Para textos sobre fondo oscuro */
     --negro-suave: #333333;      /* Para que el texto no sea un negro tan duro */
+    --fondo-hero:#B7E4C7;
     
     /* ACENTOS DE BOOTSTRAP REESCRITOS */
     --bs-primary: var(--verde-fachada);
@@ -69,29 +70,31 @@ body{
     background-color: var(--fondo-sitio);
 }
 
-.hero-contacto{
-    background-color: #2D6A4F;
+.hero-farmacia{
+    background-color: var(--fondo-hero); 
     border-top: 2px solid var(--negro-suave);
     border-bottom: 2px solid var(--negro-suave);
-    box-shadow: 0 12px 20px -8px rgba(50, 205, 50, 0.5);
-}
-
-.hero-contacto p{
-    color: var(--crema-fondo);
-    font-weight: 600;
-}
-
-.hero-contacto h1{
-    color: var(--marfil-letras);
+    box-shadow: 0 10px 25px -10px rgba(45, 106, 79, 0.3);
+    padding: 60px 0;
     font-family: var(--fuente-hero);
-    font-weight:700;
+}
+
+.hero-farmacia p{
+    color: var(--negro-suave);
+    font-weight: 500;
+}
+
+.hero-farmacia h1{
+    color: var(--negro-suave);
+    font-family: var(--fuente-hero);
+    font-weight:600;
 }
 
 
 .card-formulario{
-    background-color: var(--crema-fondo);
+    background-color: var(--marfil-letras);
     border-radius: 30px;
-    border: 1px solid var(--verde-oscuro);
+    border-left: 5px solid var(--verde-oscuro);
 }
 
 .card-formulario .btn-success{
@@ -99,7 +102,7 @@ body{
     color: #050101;
     font-weight: 600;
     border: 1px solid var(--verde-oscuro);
-    transition: 0,3s;
+    transition: 0.3s;
 }
 
 .card-formulario .btn-success:hover{
@@ -112,7 +115,7 @@ body{
     background-color: var(--blanco-puro);
     padding: 20px;
     border-radius: 15px;
-    border: 1px solid transparent;
+    border-left: 5px solid var(--verde-fachada);
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 
                 0 8px 25px rgba(50, 205, 50, 0.1);
@@ -180,24 +183,7 @@ body{
     filter: grayscale(0%) contrast(100%); /* Recupera el color */
 }
 
-.hero-nosotros {
-    background-color: #B7E4C7; 
-    border-top: 2px solid var(--negro-suave);
-    border-bottom: 2px solid var(--negro-suave);
-    box-shadow: 0 10px 25px -10px rgba(45, 106, 79, 0.3);
-    padding: 60px 0;
-}
 
-.hero-nosotros p{
-    color: var(--negro-suave);
-    font-weight: 500;
-}
-
-.hero-nosotros h1{
-    color: var(--negro-suave);
-    font-family: var(--fuente-hero);
-    font-weight:600;
-}
 
 
 .bloque-texto {
@@ -221,8 +207,8 @@ body{
 }
 
 .foto-historia:hover {
-    transform: translateY(-5px); /* Un levante sutil al pasar el mouse */
-    box-shadow: 0 15px 30px rgba(45, 106, 79, 0.2) !important;
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(45, 106, 79, 0.2);
 }
 
 
@@ -266,6 +252,12 @@ body{
     font-weight: 500;
 }
 
+.footer-farmacia h5{
+    font-family: var(--fuente-hero);
+    color: var(--crema-fondo);
+    font-weight: 500;
+}
+
 .footer-farmacia{
     color: #E1E8E8;
     font-family: var(--fuente-logo);
@@ -285,8 +277,20 @@ body{
     color: #FFFFFF;
     transform: scale(1.1);
 }
-.footer-farmacia .col-md-4{
+.footer-farmacia .col-md-3{
     border-bottom: solid 2px var(--gris-azulejo);
+}
+
+@media (min-width: 768px) {
+    .footer-farmacia .col-md-3 {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+}
+
+.fixed-width {
+    width: 40px;
+    text-align: center;
 }
 
 .footer-farmacia .col-12{
