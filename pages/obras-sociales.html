@@ -75,20 +75,207 @@
       </nav>
     </header>
 
-    <main
-      class="flex-grow-1 d-flex align-items-center justify-content-center bg-light"
-    >
-      <div class="container text-center py-5">
-        <i class="fa-solid fa-screwdriver-wrench fa-4x text-success mb-4"></i>
-        <h1 class="display-5 fw-bold text-dark">Obras Sociales</h1>
-        <p class="lead text-muted">
-          Estamos trabajando para brindarte la mejor información. <br />
-          ¡Muy pronto disponible!
-        </p>
-        <a href="../index.html" class="btn btn-outline-success mt-3"
-          >Volver al Inicio</a
-        >
-      </div>
+    <main>
+      <section class="hero-farmacia py-2 text-center my-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12">
+              <h1 class="display-4">Tu obra social, siempre a mano</h1>
+              <p class="lead">
+                Trabajamos con PAMI, IOSEP y las mutuales más importantes de la
+                zona. Consultá acá abajo si la tuya está vigente y qué necesitás
+                para presentar tu receta.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5">
+        <div class="container">
+          <div class="row justify-content-center px-3">
+            <div class="col-12 col-lg-8 card-requisitos p-4 mx-auto mb-5">
+              <h3 class="titulo-requisitos mb-4 text-center">
+                ¿Qué necesitás para tu atención?
+              </h3>
+
+              <div class="item-requisito mb-4">
+                <i class="fa-solid fa-file-medical icono-requisito"></i>
+                <div class="info-requisito">
+                  <span class="label-requisito">Receta Vigente:</span>
+                  <p class="detalle-requisito">
+                    Debe tener menos de 30 días corridos desde la fecha de
+                    emisión.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item-requisito mb-4">
+                <i class="fa-solid fa-id-card icono-requisito"></i>
+                <div class="info-requisito">
+                  <span class="label-requisito">Carnet de Afiliado:</span>
+                  <p class="detalle-requisito">
+                    Físico, digital o foto clara donde se lea bien tu número.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item-requisito mb-4">
+                <i class="fa-solid fa-key icono-requisito"></i>
+                <div class="info-requisito">
+                  <span class="label-requisito">Token / Validación:</span>
+                  <p class="detalle-requisito">
+                    Para IOSEP y Prepagas (OSDE, Sancor, etc.), tené a mano el
+                    código de la app.
+                  </p>
+                </div>
+              </div>
+
+              <div class="item-requisito mb-2">
+                <i class="fa-solid fa-users icono-requisito"></i>
+                <div class="info-requisito">
+                  <span class="label-requisito">Atención a terceros:</span>
+                  <p class="detalle-requisito">
+                    Puede acercarse un familiar o vecino con la documentación
+                    del paciente.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-5">Nuestras Obras Sociales</h2>
+
+          <div class="table-responsive shadow-sm rounded">
+            <table class="table align-middle mi-tabla">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Obra Social</th>
+                  <th scope="col">Cobertura</th>
+                  <th scope="col">Observaciones</th>
+                </tr>
+              </thead>
+              <tbody class="table-group-divider">
+                <tr>
+                  <td class="text-nowrap">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="../img/logos/Logo_pami.png"
+                        class="logo-tabla me-2"
+                        alt="PAMI"
+                      />
+                      <span class="fw-bold">PAMI</span>
+                    </div>
+                  </td>
+                  <td>
+                    40% al 100% <br /><small
+                      >(Sujeto a Vademécum y validación online)</small
+                    >
+                  </td>
+                  <td>
+                    Presentar Carnet Afiliado (físico o digital). No requiere
+                    DNI.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-nowrap">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="../img/logos/logo_iosep.png"
+                        class="logo-tabla me-2"
+                        alt="IOSEP"
+                      />
+                      <span class="fw-bold">IOSEP</span>
+                    </div>
+                  </td>
+                  <td>35%, 50% o 70% <br /><small>(Según Vademécum)</small></td>
+                  <td>
+                    Solo Receta Electrónica. Presentar Carnet (Físico o
+                    Digital).
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-nowrap">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="../img/logos/logo_sancor-salud_02.png"
+                        class="logo-tabla me-2"
+                        alt="SANCOR SALUD"
+                      />
+                      <span class="fw-bold">SANCOR SALUD</span>
+                    </div>
+                  </td>
+                  <td>40%, 70% o 100%</td>
+                  <td>
+                    Requiere Token dinámico de la App y Credencial Digital.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-nowrap">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="../img/logos/logo_nobis.png"
+                        class="logo-tabla me-2"
+                        alt="NOBIS"
+                      />
+                      <span class="fw-bold">NOBIS</span>
+                    </div>
+                  </td>
+                  <td>40% o 50%</td>
+                  <td>Presentar Credencial Digital (App) y Token.</td>
+                </tr>
+
+                <tr>
+                  <td class="text-nowrap">
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="../img/logos/logo_upcn.png"
+                        class="logo-tabla me-2"
+                        alt="UPCN"
+                      />
+                      <span class="fw-bold">UPCN</span>
+                    </div>
+                  </td>
+                  <td>20% al 40% <br /><small>(Coseguro acumulable)</small></td>
+                  <td>Descuento sobre total del producto. Presentar Carnet.</td>
+                </tr>
+
+                <tr>
+                  <td class="text-nowrap">
+                    <img
+                      src="../img/logos/logo_boreal.png"
+                      class="logo-tabla me-2"
+                      alt="BOREAL"
+                    />
+                    <span class="fw-bold">BOREAL</span>
+                  </td>
+                  <td>40%, 50% o 70%<br /><small>(Según Vademécum)</small></td>
+                  <td>Presentar Credencial Digital desde la App. Receta con fecha vigente.</td>
+                </tr>
+                <tr>
+                  <td class="text-nowrap">
+                     <img
+                      src="../img/logos/logo_ospe.png"
+                      class="logo-tabla me-2"
+                      alt="OSPE"
+                    />
+                    <span class="fw-bold">OSPE</span>
+                  </td>
+                  <td>40%, 70% o 100%<br /><small>(Según Vademécum)</small></td>
+                  <td>Presentar Credencial Digital (App) o Carnet.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer-farmacia mt-auto py-5">
       <div class="container">

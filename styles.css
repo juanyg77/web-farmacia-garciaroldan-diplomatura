@@ -180,11 +180,8 @@ body{
 .card-mapa:active iframe,
 .card-mapa:hover iframe {
     pointer-events: auto;
-    filter: grayscale(0%) contrast(100%); /* Recupera el color */
+    filter: grayscale(0%) contrast(100%);
 }
-
-
-
 
 .bloque-texto {
     background-color: var(--blanco-puro); 
@@ -240,6 +237,85 @@ body{
     text-decoration: underline !important;
 }
 
+.card-requisitos{
+    background-color: var(--blanco-puro);
+    border-radius: 15px;
+    border-left: 5px solid var(--verde-fachada);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.item-requisito {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem; 
+}
+
+.icono-requisito {
+    color: var(--verde-fachada);
+    font-size: 1.8rem;
+    width: 40px; 
+    text-align: center;
+}
+
+.info-requisito {
+    flex: 1; 
+}
+
+.label-requisito {
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--negro-suave);
+    margin-bottom: 2px;
+}
+
+.detalle-requisito {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--negro-suave); 
+}
+
+.table-responsive{
+    border-left: 5px solid var(--verde-fachada);     
+    background-color: rgba(40, 167, 69, 0.03);
+    border-radius: 15px; 
+    overflow: hidden;
+}
+
+.mi-tabla th{
+    background-color: rgba(40, 167, 69, 0.03);
+    border: none;
+    padding: 15px;
+}
+
+
+.mi-tabla tbody tr:nth-child(even) td {
+    background-color: rgba(40, 167, 69, 0.03);
+}
+
+.mi-tabla tbody tr:nth-child(odd) td {
+    background-color: var(--crema-fondo);
+}
+
+.mi-tabla tbody tr {
+    transition: all 0.2s ease-in-out; 
+}
+
+.mi-tabla tbody tr:hover td {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--verde-oscuro); 
+    cursor: pointer;
+}
+.logo-tabla {
+    width: 60px;
+    height: 40px;
+    background-color: #fff;
+    object-fit: contain;
+    padding: 2px;
+    border-radius: 4px;
+}
+
 .footer-farmacia{
     background-color: var(--verde-oscuro);
     border-top: 3px solid var(--verde-fachada);
@@ -279,6 +355,7 @@ body{
 }
 .footer-farmacia .col-md-3{
     border-bottom: solid 2px var(--gris-azulejo);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media (min-width: 768px) {
