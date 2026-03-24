@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     /* COLORES EXTRAÍDOS DE LA FOTO REAL */
     --verde-fachada: #32CD32;    /* El verde vibrante/loro de las paredes */
@@ -280,7 +285,8 @@ body{
     border-left: 5px solid var(--verde-fachada);     
     background-color: rgba(40, 167, 69, 0.03);
     border-radius: 15px; 
-    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .mi-tabla th{
@@ -315,6 +321,14 @@ body{
     padding: 2px;
     border-radius: 4px;
 }
+@media (max-width: 768px) {
+    .mi-tabla {
+        min-width: 800px !important; 
+    }
+    .mi-tabla td:first-child {
+        min-width: 180px;
+    }
+}
 
 .btn-atajo {
     display: inline-block;
@@ -329,7 +343,7 @@ body{
 }
 
 .btn-atajo:hover {
-    filter: brightness(1.2); /* Lo aclara un toque al pasar el mouse */
+    filter: brightness(1.2);
     transform: translateY(-2px);
 }
 
