@@ -27,48 +27,92 @@
   <body class="d-flex flex-column min-vh-100">
     <header>
       <nav class="navbar navbar-expand-lg navbar-farmacia sticky-top">
-        <div class="container-fluid">
+        <div
+          class="container-fluid d-flex justify-content-between align-items-center"
+        >
+          <!-- LOGO -->
           <a class="navbar-brand" href="index.html">
             <span class="ps-3">Farmacia</span> <br />
             <span class="fw-bold">García Roldán</span>
           </a>
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div
-            class="collapse navbar-collapse justify-content-center"
-            id="navbarSupportedContent"
-          >
-            <ul class="navbar-nav mx-auto mb-1 mb-lg-1">
-              <li class="nav-item px-4">
-                <a class="nav-link active" aria-current="page" href="index.html"
-                  >Inicio</a
+          <!-- CONTENEDOR DERECHO: CARRITO + BOTÓN HAMBURGUESA -->
+          <div class="d-flex align-items-center order-lg-3">
+            <!-- EL CARRITO Y SU DESPLEGABLE -->
+            <div class="position-relative me-3">
+              <button
+                id="btn-carrito"
+                class="btn border-0 p-0 position-relative"
+              >
+                <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                <span
+                  id="contador-carrito"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
                 >
+                  0
+                </span>
+              </button>
+
+              <!-- VENTANITA DEL CARRITO (Para verla ahora, borrá la clase 'd-none') -->
+              <div
+                id="carrito-desplegable"
+                class="carrito-flotante d-none shadow-lg"
+              >
+                <div
+                  class="p-3 border-bottom text-center fw-bold titulo-carrito"
+                >
+                  Mi Pedido
+                </div>
+                <div id="lista-carrito" class="p-3 text-center">
+                  El carrito está vacío
+                </div>
+                <div class="p-3 border-top">
+                  <div
+                    class="d-flex justify-content-between fw-bold mb-3 total-carrito"
+                  >
+                    <span>Total:</span>
+                    <span>$0</span>
+                  </div>
+                  <a
+                    href="pages/pago.html"
+                    class="btn w-100 fw-bold btn-finalizar"
+                    >Finalizar Compra</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTÓN HAMBURGUESA (MOBILE) -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menuPrincipal"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <!-- MENÚ DE NAVEGACIÓN -->
+          <div class="collapse navbar-collapse order-lg-2" id="menuPrincipal">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item px-3">
+                <a class="nav-link active" href="index.html">Inicio</a>
               </li>
-              <li class="nav-item px-4">
+              <li class="nav-item px-3">
                 <a class="nav-link" href="pages/productos.html">Productos</a>
               </li>
-              <li class="nav-item px-4">
+              <li class="nav-item px-3">
                 <a class="nav-link" href="pages/obras-sociales.html"
                   >Obras Sociales</a
                 >
               </li>
-              <li class="nav-item px-4">
+              <li class="nav-item px-3">
                 <a class="nav-link" href="pages/sobre-nosotros.html"
                   >Sobre Nosotros</a
                 >
               </li>
-              <li class="nav-item px-4">
+              <li class="nav-item px-3">
                 <a class="nav-link" href="pages/contacto.html">Contacto</a>
               </li>
             </ul>
@@ -143,7 +187,10 @@
           </div>
 
           <div class="mt-5">
-            <a href="pages/obras-sociales.html#obras-sociales" class="btn-os px-4">
+            <a
+              href="pages/obras-sociales.html#obras-sociales"
+              class="btn-os px-4"
+            >
               Ver todas las coberturas
             </a>
           </div>
@@ -346,5 +393,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

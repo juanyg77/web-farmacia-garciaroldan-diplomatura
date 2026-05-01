@@ -4,15 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Farmacia Garcia Roldan - Productos</title>
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
+    <!-- Font Awesome (Iconos) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,38 +28,76 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-farmacia sticky-top">
         <div class="container-fluid">
+          <!-- LOGO -->
           <a class="navbar-brand" href="../index.html">
             <span class="ps-3">Farmacia</span> <br />
             <span class="fw-bold">García Roldán</span>
           </a>
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <!-- BLOQUE CARRITO Y TOGGLER (Móvil) -->
+          <div class="d-flex align-items-center order-lg-3">
+            <!-- BOTÓN DEL CARRITO -->
+            <div class="position-relative me-3">
+              <button
+                id="btn-carrito"
+                class="btn border-0 p-0 position-relative"
+              >
+                <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                <span
+                  id="contador-carrito"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                  >0</span
+                >
+              </button>
 
+              <!-- VENTANA DESPLEGABLE DEL CARRITO -->
+              <div
+                id="carrito-desplegable"
+                class="carrito-flotante d-none shadow-lg"
+              >
+                <div
+                  class="p-3 border-bottom text-center fw-bold titulo-carrito"
+                >
+                  Mi Pedido
+                </div>
+                <div id="lista-carrito" class="p-3 text-center">
+                  El carrito está vacío
+                </div>
+                <div class="p-3 border-top">
+                  <div
+                    class="d-flex justify-content-between fw-bold mb-3 total-carrito"
+                  >
+                    <span>Total:</span>
+                    <span>$0</span>
+                  </div>
+                  <a href="pago.html" class="btn w-100 fw-bold btn-finalizar"
+                    >Finalizar Compra</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menuPrincipal"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <!-- MENÚ DE NAVEGACIÓN -->
           <div
-            class="collapse navbar-collapse justify-content-center"
-            id="navbarSupportedContent"
+            class="collapse navbar-collapse order-lg-2 justify-content-center"
+            id="menuPrincipal"
           >
-            <ul class="navbar-nav mx-auto mb-1 mb-lg-1">
+            <ul class="navbar-nav mx-auto">
               <li class="nav-item px-4">
                 <a class="nav-link" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item px-4">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="productos.html"
-                  >Productos</a
-                >
+                <a class="nav-link active" href="productos.html">Productos</a>
               </li>
               <li class="nav-item px-4">
                 <a class="nav-link" href="obras-sociales.html"
@@ -78,267 +119,53 @@
     </header>
 
     <main>
+      <!-- HERO SECCIÓN -->
       <section class="hero-farmacia py-2 text-center my-5">
         <div class="container">
-          <div class="row align-items-center">
-            <div class="col-12">
-              <h1 class="display-4">Catálogo de Salud y Bienestar</h1>
-              <p class="lead">
-                Encontrá los medicamentos de siempre y lo mejor en perfumería,
-                con la atención y el asesoramiento profesional que nos
-                caracteriza en Loreto.
-              </p>
-
-              <div class="mt-4">
-                <a href="#farmacia" class="btn-atajo px-4 me-2">Salud</a>
-                <a href="#perfumeria" class="btn-atajo px-4 me-2">perfumeria</a>
-              </div>
-            </div>
+          <h1 class="display-4">Catálogo de Salud y Bienestar</h1>
+          <p class="lead">Atención y asesoramiento profesional en Loreto.</p>
+          <div class="mt-4">
+            <a href="#farmacia" class="btn-atajo px-4 me-2">Salud</a>
+            <a href="#perfumeria" class="btn-atajo px-4 me-2">Perfumería</a>
           </div>
         </div>
       </section>
 
+      <!-- SECCIONES DONDE EL JS VA A INYECTAR LOS PRODUCTOS -->
       <section class="py-5">
         <div class="container">
+          <!-- CONTENEDOR SALUD -->
           <div class="row mb-4" id="farmacia">
             <div class="col-12 text-center">
               <h3 class="fw-bold">Farmacia y Salud</h3>
             </div>
           </div>
+          <!-- Aquí el JS buscará este ID para meter las cards -->
+          <div id="contenedor-salud" class="row g-4 mb-5"></div>
 
-          <div class="row g-4 mb-5">
-            <div class="col-md-3">
-              <article class="card-producto">
-                <div class="header-producto">
-                  <img
-                    src="../img/productos/sertal_perlas.png"
-                    class="img-producto"
-                    alt="Sertal Perlas"
-                  />
-                </div>
-                <div class="info-producto mt-3">
-                  <h5 class="nombre-producto">Sertal Perlas</h5>
-                  <p class="descripcion-producto text-muted">
-                    Caja x 10 cápsulas
-                  </p>
-                  <p class="precio-producto">$8.000</p>
-                  <button type="button" class="btn-comprar">Comprar</button>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-3">
-              <article class="card-producto">
-                <div class="header-producto">
-                  <img
-                    src="../img/productos/sertal_compuesto.png"
-                    class="img-producto"
-                    alt="Sertal Compuesto"
-                  />
-                </div>
-                <div class="info-producto mt-3">
-                  <h5 class="nombre-producto">Sertal Compuesto</h5>
-                  <p class="descripcion-producto text-muted">
-                    Caja x 20 comprimidos
-                  </p>
-                  <p class="precio-producto">$9.500</p>
-                  <button type="button" class="btn-comprar">Comprar</button>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-3">
-              <article class="card-producto">
-                <div class="header-producto">
-                  <img
-                    src="../img/productos/lotrial10.png"
-                    class="img-producto"
-                    alt="Lotrial"
-                  />
-                </div>
-                <div class="info-producto mt-3">
-                  <h5 class="nombre-producto">Lotrial 10mg</h5>
-                  <p class="descripcion-producto text-muted">
-                    Caja x 30 comprimidos
-                  </p>
-                  <p class="precio-producto">$12.000</p>
-                  <button type="button" class="btn-comprar">Comprar</button>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-3">
-              <article class="card-producto">
-                <div class="header-producto">
-                  <img
-                    src="../img/productos/losacor.png"
-                    class="img-producto"
-                    alt="Losacor"
-                  />
-                </div>
-                <div class="info-producto mt-3">
-                  <h5 class="nombre-producto">Losacor 50mg</h5>
-                  <p class="descripcion-producto text-muted">
-                    Caja x 30 comprimidos
-                  </p>
-                  <p class="precio-producto">$11.500</p>
-                  <button type="button" class="btn-comprar">Comprar</button>
-                </div>
-              </article>
-            </div>
-          </div>
-
+          <!-- CONTENEDOR PERFUMERÍA -->
           <div class="row mb-4 pt-4" id="perfumeria">
             <div class="col-12 text-center">
               <h3 class="fw-bold">Perfumería y Cuidado</h3>
             </div>
           </div>
-
-          <div class="row g-4">
-            <div class="col-md-3">
-              <article class="card-producto">
-                <div class="header-producto">
-                  <img
-                    src="../img/productos/shampo.jpg"
-                    class="img-producto"
-                    alt="Shampoo"
-                  />
-                </div>
-                <div class="info-producto mt-3">
-                  <h5 class="nombre-producto">Shampoo Tío Nacho Herbolaria Milenaria</h5>
-                  <p class="descripcion-producto text-muted">Anti-caída- 415ml</p>
-                  <p class="precio-producto">$15.000</p>
-                  <button type="button" class="btn-comprar">Comprar</button>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-3">
-              <article class="card-producto">
-                <div class="header-producto">
-                  <img
-                    src="../img/productos/rexona.png"
-                    class="img-producto"
-                    alt="Rexona"
-                  />
-                </div>
-                <div class="info-producto mt-3">
-                  <h5 class="nombre-producto">Desodorante Rexona Motionsense Invisible</h5>
-                  <p class="descripcion-producto text-muted">
-                    Aerosol + Roll-on
-                  </p>
-                  <p class="precio-producto">$6.500</p>
-                  <button type="button" class="btn-comprar">Comprar</button>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-3">
-              <article class="card-producto">
-                <div class="header-producto">
-                  <img
-                    src="../img/productos/axe.png"
-                    class="img-producto"
-                    alt="Axe"
-                  />
-                </div>
-                <div class="info-producto mt-3">
-                  <h5 class="nombre-producto">Desodorante Axe Dark Temptation</h5>
-                  <p class="descripcion-producto text-muted">
-                   Aerosol x 152ml
-                  </p>
-                  <p class="precio-producto">$4.200</p>
-                  <button type="button" class="btn-comprar">Comprar</button>
-                </div>
-              </article>
-            </div>
-
-            <div class="col-md-3">
-              <article class="card-producto">
-                <div class="header-producto">
-                  <img
-                    src="../img/productos/protectores_solares.png"
-                    class="img-producto"
-                    alt="Protector solar Dermaglos"
-                  />
-                </div>
-                <div class="info-producto mt-3">
-                  <h5 class="nombre-producto">Línea Solar Dermaglós</h5>
-                  <p class="descripcion-producto text-muted">
-                    Protectores FPS 50 y Post Solar
-                  </p>
-                  <p class="precio-producto">$30.500</p>
-                  <button type="button" class="btn-comprar">Comprar</button>
-                </div>
-              </article>
-            </div>
-          </div>
+          <!-- Aquí el JS buscará este ID para meter las cards -->
+          <div id="contenedor-perfumeria" class="row g-4"></div>
         </div>
       </section>
     </main>
 
     <footer class="footer-farmacia mt-auto py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 text-center text-md-start mb-4 mb-md-0">
-            <h4 class="fw-bold">Farmacia García Roldán</h4>
-            <p>Juan Domingo Perón Esq. Eduardo Miguel</p>
-            <p>Loreto, Sgo del Estero, Argentina</p>
-          </div>
-
-          <div class="col-md-3 text-center text-md-start mb-4 mb-md-0">
-            <ul class="list-unstyled">
-              <li><a href="../index.html">Inicio</a></li>
-              <li><a href="productos.html">Productos</a></li>
-              <li><a href="obras-sociales.html">Obras Sociales</a></li>
-              <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-              <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-          </div>
-
-          <div class="col-md-3 text-center text-md-start mb-4 mb-md-0">
-            <h5 class="fw-bold mb-4">Canales de Atención</h5>
-            <div class="d-inline-block text-start">
-              <div class="mb-3 d-flex align-items-center">
-                <i
-                  class="fa-brands fa-square-whatsapp fa-2x me-3 fixed-width"
-                ></i>
-                <span class="fw-bold">3547 328075</span>
-              </div>
-              <div class="mb-3 d-flex align-items-center">
-                <i class="fa-solid fa-square-phone fa-2x me-3 fixed-width"></i>
-                <span class="fw-bold">03845 420 053</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3 text-center text-md-start mb-5 mb-md-0">
-            <h5 class="fw-bold mb-4">Horarios</h5>
-            <div class="d-inline-block text-start">
-              <div class="d-flex align-items-start mb-4">
-                <i class="fa-solid fa-clock fa-2x me-3 fixed-width"></i>
-                <div>
-                  <p class="small fw-bold mb-0">Lunes a Sábado:</p>
-                  <p class="small mb-2">07:30 a 13:00 y 17:00 a 22:30</p>
-                  <p class="small fw-bold mb-0">Domingos:</p>
-                  <p class="small mb-0">08:00 a 13:00</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12 text-center mt-4">
-            <hr class="border-secondary opacity-25" />
-            <p class="small">
-              © 2026 Juan Ignacio García - Proyecto Farmacia - Diplomatura ICARO
-            </p>
-          </div>
-        </div>
+      <div class="container text-center">
+        <p class="small">
+          © 2026 Juan Ignacio García - Proyecto Farmacia - Diplomatura ICARO
+        </p>
       </div>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- TU ARCHIVO JS (Aseguramos que la ruta sea correcta desde la carpeta pages) -->
+    <script src="../script.js"></script>
   </body>
 </html>

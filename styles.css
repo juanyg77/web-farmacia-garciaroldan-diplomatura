@@ -384,7 +384,7 @@ body{
     padding: 15px;
 }
 
-.btn-comprar {
+.btn-agregar-carrito {
     width: 100%;             
     background-color: var(--verde-oscuro); 
     color: var(--marfil-letras);
@@ -399,7 +399,7 @@ body{
     margin-top: 10px;       
 }
 
-.btn-comprar:hover {
+.btn-agregar-carrito:hover {
     background-color: var(--verde-fachada);
     color: var(--negro-suave); 
 }
@@ -535,7 +535,7 @@ body{
 
 .mapa-farmacia {
     width: 100%;
-    height: 400px; /* Altura en PC */
+    height: 400px; 
     display: block;
     border: 0;
 }
@@ -550,7 +550,81 @@ body{
     }
 }
 
+/* =========================================
+   ESTILOS DEL CARRITO Y HOVER
+   ========================================= */
 
+/* Estilos del botón del carrito */
+#btn-carrito {
+    color: var(--marfil-letras);
+    transition: transform 0.2s ease, color 0.2s ease;
+    background: transparent;
+}
+
+#btn-carrito:hover {
+    transform: scale(1.15);
+    color: var(--blanco-puro);
+}
+
+/* Contador sobre el carrito */
+#contador-carrito {
+    background-color: var(--verde-fachada);
+    color: var(--verde-oscuro);
+    font-size: 0.7rem;
+    border: 1px solid var(--verde-oscuro);
+}
+
+/* Contenedor del Carrito Flotante */
+.carrito-flotante {
+    position: absolute;
+    top: 45px; 
+    right: -10px; 
+    width: 320px;
+    background-color: var(--blanco-puro);
+    border: 2px solid var(--verde-oscuro);
+    border-radius: 8px;
+    z-index: 1050;
+    font-family: var(--fuente-hero);
+}
+
+/* Colores internos de la ventanita */
+.titulo-carrito {
+    color: var(--negro-suave);
+    font-family: var(--fuente-logo);
+    font-size: 1.1rem;
+}
+
+#lista-carrito {
+    color: var(--gris-azulejo);
+    min-height: 50px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.total-carrito {
+    color: var(--negro-suave);
+}
+
+/* Botón Finalizar Compra */
+.btn-finalizar {
+    background-color: var(--verde-oscuro);
+    color: var(--marfil-letras);
+    border: 2px solid var(--verde-oscuro);
+    transition: all 0.3s ease;
+}
+
+.btn-finalizar:hover {
+    background-color: var(--verde-fachada);
+    border-color: var(--verde-fachada);
+    color: var(--negro-suave);
+}
+
+/* Ajuste para celulares */
+@media (max-width: 991px) {
+    .carrito-flotante {
+        right: -60px;
+    }
+}
 .footer-farmacia{
     background-color: var(--verde-oscuro);
     border-top: 3px solid var(--verde-fachada);
