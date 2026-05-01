@@ -24,36 +24,73 @@
   <body class="d-flex flex-column min-vh-100">
     <header>
       <nav class="navbar navbar-expand-lg navbar-farmacia sticky-top">
-        <div class="container-fluid">
+        <div
+          class="container-fluid d-flex justify-content-between align-items-center"
+        >
           <a class="navbar-brand" href="../index.html">
             <span class="ps-3">Farmacia</span> <br />
             <span class="fw-bold">García Roldán</span>
           </a>
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <div class="d-flex align-items-center order-lg-3">
+            <div class="position-relative me-3">
+              <button
+                id="btn-carrito"
+                class="btn border-0 p-0 position-relative"
+              >
+                <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                <span
+                  id="contador-carrito"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                  >0</span
+                >
+              </button>
 
-          <div
-            class="collapse navbar-collapse justify-content-center"
-            id="navbarSupportedContent"
-          >
-            <ul class="navbar-nav mx-auto mb-1 mb-lg-1">
-              <li class="nav-item px-4">
+              <div
+                id="carrito-desplegable"
+                class="carrito-flotante d-none shadow-lg"
+              >
+                <div
+                  class="p-3 border-bottom text-center fw-bold titulo-carrito"
+                >
+                  Mi Pedido
+                </div>
+                <div id="lista-carrito" class="p-3 text-center">
+                  El carrito está vacío
+                </div>
+                <div class="p-3 border-top">
+                  <div
+                    class="d-flex justify-content-between fw-bold mb-3 total-carrito"
+                  >
+                    <span>Total:</span>
+                    <span id="precio-total">$0</span>
+                  </div>
+                  <a href="pago.html" class="btn w-100 fw-bold btn-finalizar"
+                    >Finalizar Compra</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menuPrincipal"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse order-lg-2" id="menuPrincipal">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item px-3">
                 <a class="nav-link" href="../index.html">Inicio</a>
               </li>
-              <li class="nav-item px-4">
+              <li class="nav-item px-3">
                 <a class="nav-link" href="productos.html">Productos</a>
               </li>
-              <li class="nav-item px-4">
+              <li class="nav-item px-3">
                 <a
                   class="nav-link active"
                   aria-current="page"
@@ -61,12 +98,12 @@
                   >Obras Sociales</a
                 >
               </li>
-              <li class="nav-item px-4">
+              <li class="nav-item px-3">
                 <a class="nav-link" href="sobre-nosotros.html"
                   >Sobre Nosotros</a
                 >
               </li>
-              <li class="nav-item px-4">
+              <li class="nav-item px-3">
                 <a class="nav-link" href="contacto.html">Contacto</a>
               </li>
             </ul>
@@ -349,5 +386,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

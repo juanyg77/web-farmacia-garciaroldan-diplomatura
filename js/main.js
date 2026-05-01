@@ -114,6 +114,8 @@ const dibujarCarrito = () =>{
         return;
     }
 
+
+
     let sumaTotal=0;
 
     carrito.forEach((prod, indice) =>{
@@ -134,8 +136,23 @@ const dibujarCarrito = () =>{
         lista.innerHTML += renglon;
     });
     totalContenedor.innerText = `$${sumaTotal.toLocaleString()}`;
+    actualizarContador();
 };
 
+const eliminarProducto = (indice) => {
+    carrito.splice(indice, 1);
+
+    localStorage.setItem('carritoFarmacia', JSON.stringify(carrito));
+    dibujarCarrito();
+    actualizarContador();
+}
+
+const actualizarContador = () => {
+    const contador = document.querySelector('#contador-carrito');
+    if (contador) {
+        contador.innerText = carrito.length;
+    }
+};
 
 btnCarrito.addEventListener('click', () =>{
     carritoDesplegable.classList.toggle('d-none');
@@ -146,6 +163,7 @@ btnCarrito.addEventListener('click', () =>{
 
 pintarProductos();
 dibujarCarrito();
+actualizarContador();
 
 const botonesAgregar = document.querySelectorAll('.btn-agregar-carrito');
 
@@ -165,6 +183,7 @@ botonesAgregar.forEach(boton => {
     if(productoEncontrado) {
         carrito.push(productoEncontrado);
         dibujarCarrito();
+        actualizarContador();
         localStorage.setItem('carritoFarmacia', JSON.stringify(carrito));
 
         console.log("Carrito actual:", carrito);
