@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmacia García Roldán - Finalizar Compra</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-farmacia sticky-top">
+        <div
+          class="container-fluid d-flex justify-content-between align-items-center"
+        >
+          <a class="navbar-brand" href="../index.html">
+            <span class="ps-3">Farmacia</span> <br />
+            <span class="fw-bold">García Roldán</span>
+          </a>
+
+          <div class="d-flex align-items-center order-lg-3">
+           
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menuPrincipal"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse order-lg-2" id="menuPrincipal">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item px-3">
+                <a class="nav-link" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link" href="productos.html">Productos</a>
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link" href="obras-sociales.html"
+                  >Obras Sociales</a
+                >
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link" href="sobre-nosotros.html"
+                  >Sobre Nosotros</a
+                >
+              </li>
+              <li class="nav-item px-3">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-farmacia py-2 text-center my-5">
+        <div class="container">
+          <h1 class="display-4">Finalizar Compra</h1>
+          <p class="lead">
+            Elegí tu método de pago y confirmá tu pedido de forma segura.
+          </p>
+        </div>
+      </section>
+
+      <section class="py-5">
+        <div class="container text-center">
+          <div id="estado-vacio" class="d-none py-5">
+            <i class="fa-solid fa-basket-shopping fa-4x text-muted mb-4"></i>
+            <h3 class="mb-3">Tu carrito está vacío</h3>
+            <p class="text-muted mb-4">
+              Parece que todavía no agregaste ningún producto de la farmacia.
+            </p>
+            <a
+              href="productos.html"
+              class="btn btn-pago-volver btn-outline-primary px-4 py-2"
+              >Volver a Productos</a
+            >
+          </div>
+
+          <div
+            id="estado-pago"
+            class="row align-items-start justify-content-center px-3"
+          >
+            <div class="col-12 col-lg-5 mb-4 text-start">
+              <div class="card shadow-sm p-4 h-100">
+                <h4 class="mb-4 border-bottom pb-2">Resumen de tu pedido</h4>
+
+                <div id="resumen-carrito-pago" class="mb-4">
+                  <p class="text-muted text-center small">
+                    Cargando productos...
+                  </p>
+                </div>
+
+                <hr />
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="text-muted">Subtotal:</span>
+                  <span id="subtotal-pago" class="fw-bold">$0</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                  <span id="texto-descuento-recargo" class="text-muted"
+                    >Descuento/Recargo:</span
+                  >
+                  <span id="valor-descuento-recargo" class="fw-bold">$0</span>
+                </div>
+                <div
+                  class="d-flex justify-content-between fs-4 fw-bold text-success border-top pt-2"
+                >
+                  <span>Total final:</span>
+                  <span id="total-final-pago">$0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-7 text-start">
+              <div class="card shadow-sm p-4">
+                <h4 class="mb-4 border-bottom pb-2">Método de pago</h4>
+
+                <form id="form-pago" novalidate>
+                  <div class="mb-3">
+                    <label for="metodo-pago" class="form-label fw-bold"
+                      >¿Cómo querés pagar?</label
+                    >
+                    <select
+                      class="form-select form-select-lg"
+                      id="metodo-pago"
+                      required
+                    >
+                      <option value="" selected disabled>
+                        Seleccioná una opción...
+                      </option>
+                      <option value="transferencia">
+                        Transferencia / Depósito (-5% OFF)
+                      </option>
+                      <option value="debito">Tarjeta de Débito</option>
+                      <option value="credito">Tarjeta de Crédito</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Por favor, seleccioná un método de pago.
+                    </div>
+                  </div>
+
+                  <div id="contenedor-cuotas" class="mb-4 d-none">
+                    <label
+                      for="cuotas-pago"
+                      class="form-label text-primary fw-bold"
+                      ><i class="fa-solid fa-layer-group me-2"></i>Elegí las
+                      cuotas</label
+                    >
+                    <select class="form-select" id="cuotas-pago">
+                      <option value="1" selected>
+                        1 pago (Precio de lista)
+                      </option>
+                      <option value="3">3 cuotas (+20% de recargo)</option>
+                      <option value="6">6 cuotas (+30% de recargo)</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Tenés que elegir la cantidad de cuotas.
+                    </div>
+                  </div>
+
+                  <div id="info-transferencia" class="alert alert-info d-none">
+                    <h5 class="alert-heading">
+                      <i class="fa-solid fa-building-columns me-2"></i>Datos
+                      Bancarios
+                    </h5>
+                    <p class="mb-1">
+                      Transferí el monto total al siguiente Alias:
+                    </p>
+                    <p
+                      class="fs-5 fw-bold text-dark text-center my-3 bg-white py-2 rounded border"
+                    >
+                      FARMACIA.PAGOS
+                    </p>
+                    <p class="mb-1"><strong>CBU:</strong> 123456789987654321</p>
+                    <p class="mb-0">
+                      <strong>Titular:</strong> Farmacia García Roldán
+                    </p>
+                    <hr />
+                    <p class="small mb-0">
+                      Una vez confirmada la compra, te pediremos que envíes el
+                      comprobante por WhatsApp.
+                    </p>
+                  </div>
+
+                  <div id="formulario-tarjeta" class="d-none">
+                    <h5 class="mb-3">
+                      <i class="fa-regular fa-credit-card me-2"></i>Datos de la
+                      tarjeta
+                    </h5>
+
+                    <div class="mb-3">
+                      <label for="nombre-tarjeta" class="form-label"
+                        >Nombre del titular</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nombre-tarjeta"
+                        placeholder="Como figura en la tarjeta"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Ingresá el nombre válido del titular.
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="nro-tarjeta" class="form-label"
+                        >Número de tarjeta</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nro-tarjeta"
+                        placeholder="XXXX XXXX XXXX XXXX"
+                        maxlength="19"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        El número debe tener 16 dígitos.
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-6 mb-3">
+                        <label for="vencimiento" class="form-label"
+                          >Vencimiento</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="vencimiento"
+                          placeholder="MM/AA"
+                          maxlength="5"
+                          required
+                        />
+                        <div class="invalid-feedback">Formato inválido.</div>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <label for="cvv" class="form-label">Código (CVV)</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="cvv"
+                          placeholder="123"
+                          maxlength="3"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Debe tener 3 dígitos.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    type="submit"
+                    id="btn-confirmar-pago"
+                    class="btn btn-pago-confirmar btn-success w-100 mt-4 py-3 fw-bold fs-5"
+                  >
+                    Confirmar Pago
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+         
+          <div id="pantalla-exito" class="d-none py-5">
+            <div class="card-exito">
+              <div class="mb-4 text-success">
+                <i class="fa-solid fa-circle-check fa-5x"></i>
+              </div>
+              <h2 class="fw-bold mb-3">¡Pedido Confirmado!</h2>
+              <p class="text-muted fs-5 mb-1">
+                Gracias por tu compra en Farmacia García Roldán.
+              </p>
+              <p class="fs-5 mb-4">
+                Tu número de pedido es:
+                <span
+                  id="nro-pedido-final"
+                  class="ticket-pedido fw-bold text-dark"
+                ></span>
+              </p>
+
+              <div id="detalle-final-wa" class="mb-4">
+               
+              </div>
+
+              <a href="../index.html" class="btn btn-pago-volver px-4 py-2 mt-2"
+                >Volver al inicio</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-farmacia mt-auto py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 text-center text-md-start mb-4 mb-md-0">
+            <h4 class="fw-bold">Farmacia García Roldán</h4>
+            <p>Juan Domingo Perón Esq. Eduardo Miguel</p>
+            <p>Loreto, Sgo del Estero, Argentina</p>
+          </div>
+
+          <div class="col-md-3 text-center text-md-start mb-4 mb-md-0">
+            <ul class="list-unstyled">
+              <li><a href="../index.html">Inicio</a></li>
+              <li><a href="productos.html">Productos</a></li>
+              <li><a href="obras-sociales.html">Obras Sociales</a></li>
+              <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 text-center text-md-start mb-4 mb-md-0">
+            <h5 class="fw-bold mb-4">Canales de Atención</h5>
+            <div class="d-inline-block text-start">
+              <div class="mb-3 d-flex align-items-center">
+                <i
+                  class="fa-brands fa-square-whatsapp fa-2x me-3 fixed-width"
+                ></i>
+                <span class="fw-bold">3547 328075</span>
+              </div>
+              <div class="mb-3 d-flex align-items-center">
+                <i class="fa-solid fa-square-phone fa-2x me-3 fixed-width"></i>
+                <span class="fw-bold">03845 420 053</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 text-center text-md-start mb-5 mb-md-0">
+            <h5 class="fw-bold mb-4">Horarios</h5>
+            <div class="d-inline-block text-start">
+              <div class="d-flex align-items-start mb-4">
+                <i class="fa-solid fa-clock fa-2x me-3 fixed-width"></i>
+                <div>
+                  <p class="small fw-bold mb-0">Lunes a Sábado:</p>
+                  <p class="small mb-2">07:30 a 13:00 y 17:00 a 22:30</p>
+                  <p class="small fw-bold mb-0">Domingos:</p>
+                  <p class="small mb-0">08:00 a 13:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center mt-4">
+            <hr class="border-secondary opacity-25" />
+            <p class="small">
+              © 2026 Juan Ignacio García - Proyecto Farmacia - Diplomatura ICARO
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/pago.js"></script>
+  </body>
+</html>

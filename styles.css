@@ -550,11 +550,7 @@ body{
     }
 }
 
-/* =========================================
-   ESTILOS DEL CARRITO Y HOVER
-   ========================================= */
 
-/* Estilos del botón del carrito */
 #btn-carrito {
     color: var(--marfil-letras);
     transition: transform 0.2s ease, color 0.2s ease;
@@ -566,7 +562,6 @@ body{
     color: var(--blanco-puro);
 }
 
-/* Contador sobre el carrito */
 #contador-carrito {
     background-color: var(--verde-fachada);
     color: var(--verde-oscuro);
@@ -574,7 +569,6 @@ body{
     border: 1px solid var(--verde-oscuro);
 }
 
-/* Contenedor del Carrito Flotante */
 .carrito-flotante {
     position: absolute;
     top: 45px; 
@@ -587,7 +581,7 @@ body{
     font-family: var(--fuente-hero);
 }
 
-/* Colores internos de la ventanita */
+
 .titulo-carrito {
     color: var(--negro-suave);
     font-family: var(--fuente-logo);
@@ -605,7 +599,7 @@ body{
     color: var(--negro-suave);
 }
 
-/* Botón Finalizar Compra */
+
 .btn-finalizar {
     background-color: var(--verde-oscuro);
     color: var(--marfil-letras);
@@ -619,12 +613,165 @@ body{
     color: var(--negro-suave);
 }
 
-/* Ajuste para celulares */
+
 @media (max-width: 991px) {
     .carrito-flotante {
         right: -60px;
     }
 }
+
+
+#estado-pago .card {
+    border: none;
+    border-radius: 15px;
+    border-left: 5px solid var(--verde-oscuro);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    background-color: var(--blanco-puro);
+}
+
+
+#estado-pago .card h4 {
+    color: var(--negro-suave);
+    font-family: var(--fuente-logo);
+    font-weight: 700;
+    border-bottom: 2px solid var(--verde-fachada) !important;
+}
+
+#resumen-carrito-pago .d-flex {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc;
+    font-family: var(--fuente-hero);
+    color: var(--negro-suave);
+}
+
+#resumen-carrito-pago .d-flex:last-child {
+    border-bottom: none;
+}
+
+
+.btn-pago-volver {
+    color: var(--verde-oscuro);
+    border: 2px solid var(--verde-oscuro);
+    background-color: transparent;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-pago-volver:hover {
+    background-color: var(--verde-oscuro);
+    color: var(--marfil-letras);
+    transform: translateY(-2px);
+}
+
+.btn-pago-confirmar {
+    background-color: var(--verde-fachada) !important;
+    color: var(--negro-suave) !important;
+    border: none !important;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(50, 205, 50, 0.3);
+}
+
+.btn-pago-confirmar:hover {
+    background-color: var(--verde-oscuro) !important;
+    color: var(--marfil-letras) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 100, 0, 0.4);
+}
+
+
+#form-pago .form-control, 
+#form-pago .form-select {
+    border: 1px solid var(--gris-azulejo);
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+#form-pago .form-control:focus, 
+#form-pago .form-select:focus {
+    border-color: var(--verde-fachada);
+    box-shadow: 0 0 0 0.25rem rgba(50, 205, 50, 0.25);
+}
+
+#info-transferencia {
+    background-color: rgba(183, 228, 199, 0.3); 
+    border: 1px solid var(--verde-fachada);
+    border-left: 5px solid var(--verde-fachada);
+    color: var(--negro-suave);
+    border-radius: 10px;
+}
+
+
+#info-transferencia .bg-white {
+    color: var(--verde-oscuro) !important;
+    letter-spacing: 2px;
+    border: 2px dashed var(--verde-oscuro) !important;
+}
+
+
+
+.card-exito {
+    background-color: var(--blanco-puro);
+    border-radius: 15px;
+    border-top: 5px solid var(--verde-fachada);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 3rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.card-exito h2 {
+    font-family: var(--fuente-logo);
+    color: var(--verde-oscuro);
+    letter-spacing: 1px;
+}
+
+.card-exito p {
+    font-family: var(--fuente-hero);
+    color: var(--negro-suave);
+}
+
+.card-exito i.fa-circle-check {
+    color: var(--verde-fachada);
+}
+
+.ticket-pedido {
+    background-color: rgba(183, 228, 199, 0.3); 
+    color: var(--verde-oscuro) !important;
+    padding: 5px 15px;
+    border: 2px dashed var(--verde-oscuro);
+    border-radius: 8px;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.btn-wa {
+    background-color: #25D366; 
+    color: var(--blanco-puro);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-family: var(--fuente-hero);
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.btn-wa:hover {
+    background-color: #128C7E;
+    color: var(--blanco-puro);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(18, 140, 126, 0.4);
+}
+
 .footer-farmacia{
     background-color: var(--verde-oscuro);
     border-top: 3px solid var(--verde-fachada);
